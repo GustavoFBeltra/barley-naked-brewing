@@ -12,6 +12,7 @@ export default function AboutPage() {
   const operations = getTeamByCategory("operations");
   const brewing = getTeamByCategory("brewing");
   const vips = getTeamByCategory("vip");
+  const crew = getTeamByCategory("crew");
 
   return (
     <div className="pt-20">
@@ -53,22 +54,22 @@ export default function AboutPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-warm-brown rounded-lg p-6 text-center">
-                <span className="text-3xl mb-2">🍺</span>
+                <span className="text-3xl mb-2 block">🍺</span>
                 <p className="text-gold font-heading text-lg">Quality</p>
                 <p className="text-cream/60 text-sm mt-1">In every batch</p>
               </div>
               <div className="bg-warm-brown rounded-lg p-6 text-center">
-                <span className="text-3xl mb-2">🤝</span>
+                <span className="text-3xl mb-2 block">🤝</span>
                 <p className="text-gold font-heading text-lg">Community</p>
                 <p className="text-cream/60 text-sm mt-1">First & foremost</p>
               </div>
               <div className="bg-warm-brown rounded-lg p-6 text-center">
-                <span className="text-3xl mb-2">🎵</span>
+                <span className="text-3xl mb-2 block">🎵</span>
                 <p className="text-gold font-heading text-lg">Entertainment</p>
                 <p className="text-cream/60 text-sm mt-1">Live music weekly</p>
               </div>
               <div className="bg-warm-brown rounded-lg p-6 text-center">
-                <span className="text-3xl mb-2">❤️</span>
+                <span className="text-3xl mb-2 block">❤️</span>
                 <p className="text-gold font-heading text-lg">Passion</p>
                 <p className="text-cream/60 text-sm mt-1">In everything we do</p>
               </div>
@@ -129,9 +130,9 @@ export default function AboutPage() {
             No brewery is complete without its four-legged friends. Meet Barley and Hops,
             our official mascots and chief happiness officers.
           </p>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="max-w-md mx-auto">
             {vips.map((member) => (
-              <TeamMember key={member.id} member={member} />
+              <TeamMember key={member.id} member={member} size="large" />
             ))}
           </div>
         </div>
@@ -148,12 +149,10 @@ export default function AboutPage() {
             faces that greet you, help you find your new favorite beer, and ensure you
             have an amazing experience every time.
           </p>
-          <div className="bg-dark-brown/50 rounded-lg p-8 text-center border border-gold/20">
-            <p className="text-cream/80 text-lg">
-              A huge thank you to all our amazing staff members who work hard every day
-              to make Barley Naked Brewing Company the welcoming place it is. We couldn&apos;t
-              do it without you!
-            </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            {crew.map((member) => (
+              <TeamMember key={member.id} member={member} size="small" />
+            ))}
           </div>
         </div>
       </section>

@@ -61,15 +61,15 @@ export default function Header() {
               transition={{ duration: 0.5 }}
             >
               <Image
-                src="/barleynaked_logo.png"
+                src="/logo-icon.png"
                 alt="Barley Naked Brewing Company"
-                width={60}
-                height={60}
-                className="w-12 h-12 sm:w-14 sm:h-14 drop-shadow-lg"
+                width={50}
+                height={50}
+                className="w-10 h-10 sm:w-12 sm:h-12 drop-shadow-lg"
               />
             </motion.div>
             <motion.span
-              className="hidden sm:block text-gold font-heading text-xl font-semibold"
+              className="hidden sm:block text-white font-heading text-xl font-semibold"
               whileHover={{ scale: 1.05 }}
             >
               Barley Naked

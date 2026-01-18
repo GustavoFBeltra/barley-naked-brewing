@@ -190,7 +190,7 @@ export default function HomePage() {
         <div className="h-[500px] md:h-[600px]">
           <CircularGallery
             items={galleryItems}
-            bend={3}
+            bend={1}
             borderRadius={0.05}
             scrollSpeed={2}
             scrollEase={0.03}
@@ -209,9 +209,10 @@ export default function HomePage() {
               Plan Your Visit
             </h2>
           </FadeIn>
-          <div className="grid md:grid-cols-3 gap-8">
+
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
             {/* Hours */}
-            <FadeIn delay={0.1}>
+            <FadeIn delay={0.1} className="w-full lg:w-72">
               <Card className="h-full">
                 <h3 className="text-gold font-heading text-xl mb-4 flex items-center gap-3">
                   <motion.div
@@ -229,31 +230,33 @@ export default function HomePage() {
               </Card>
             </FadeIn>
 
-            {/* Location */}
-            <FadeIn delay={0.2}>
-              <Card className="h-full">
-                <h3 className="text-gold font-heading text-xl mb-4 flex items-center gap-3">
-                  <motion.div
-                    className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center"
-                    whileHover={{ y: -5 }}
-                    transition={{ type: "spring" }}
-                  >
-                    <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </motion.div>
-                  Location
-                </h3>
+            {/* Center Map Circle */}
+            <FadeIn delay={0.2} className="flex flex-col items-center">
+              <motion.div
+                className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gold/40 shadow-2xl shadow-gold/10"
+                whileHover={{ scale: 1.03, borderColor: "rgba(255, 200, 43, 0.7)" }}
+                transition={{ duration: 0.3 }}
+              >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.5!2d-77.4097!3d38.4456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b6eb5c5f5b5b5b%3A0x0!2s15%20Tech%20Pkwy%2C%20Stafford%2C%20VA%2022556!5e0!3m2!1sen!2sus!4v1"
+                  width="400"
+                  height="400"
+                  style={{ border: 0, marginLeft: "-60px", marginTop: "-60px" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </motion.div>
+              <div className="mt-6 text-center">
                 <address className="not-italic text-cream/70 space-y-1">
-                  <p>15 Tech Parkway</p>
+                  <p className="font-semibold text-gold">15 Tech Parkway</p>
                   <p>Stafford, Virginia 22556</p>
                 </address>
                 <motion.a
                   href="https://maps.google.com/?q=15+Tech+Parkway+Stafford+Virginia+22556"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 text-gold hover:text-amber transition-colors text-sm group"
+                  className="inline-flex items-center gap-2 mt-3 text-gold hover:text-amber transition-colors text-sm group"
                   whileHover={{ x: 5 }}
                 >
                   Get Directions
@@ -261,11 +264,11 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </motion.a>
-              </Card>
+              </div>
             </FadeIn>
 
             {/* Contact */}
-            <FadeIn delay={0.3}>
+            <FadeIn delay={0.3} className="w-full lg:w-72">
               <Card className="h-full">
                 <h3 className="text-gold font-heading text-xl mb-4 flex items-center gap-3">
                   <motion.div

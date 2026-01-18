@@ -58,48 +58,22 @@ export default function Hero() {
         className="relative z-10 text-center px-4 max-w-4xl mx-auto"
         style={{ y, opacity }}
       >
-        {/* Logo with Float Animation */}
+        {/* Logo with Float Animation - Large logo with text built-in */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
-          className="animate-float"
+          className="animate-float mb-8"
         >
           <Image
             src="/barleynaked_logo.png"
             alt="Barley Naked Brewing Company"
-            width={200}
-            height={200}
-            className="mx-auto mb-8 w-40 h-40 sm:w-52 sm:h-52 drop-shadow-2xl"
+            width={500}
+            height={500}
+            className="mx-auto w-72 h-72 sm:w-96 sm:h-96 md:w-[450px] md:h-[450px] drop-shadow-2xl"
             priority
           />
         </motion.div>
-
-        {/* Title with Stagger Animation */}
-        <motion.h1
-          className="text-4xl sm:text-5xl md:text-7xl font-heading text-cream mb-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <motion.span
-            className="text-shimmer inline-block"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Barley Naked
-          </motion.span>
-          <br />
-          <motion.span
-            className="inline-block"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            Brewing Company
-          </motion.span>
-        </motion.h1>
 
         {/* Tagline */}
         <motion.p
