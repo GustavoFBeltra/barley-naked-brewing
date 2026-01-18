@@ -8,7 +8,24 @@ import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import FadeIn from "@/components/animations/FadeIn";
 import CountUp from "@/components/animations/CountUp";
+import { CircularGallery, GalleryItem } from "@/components/ui/CircularGallery";
 import { getFeaturedBeers } from "@/lib/beers";
+
+// Gallery items with brewery photos
+const galleryItems: GalleryItem[] = [
+  { image: "/gallery/gallery-1.webp", text: "Taproom" },
+  { image: "/gallery/gallery-2.webp", text: "Beer Flights" },
+  { image: "/gallery/gallery-3.webp", text: "Live Music" },
+  { image: "/gallery/gallery-4.webp", text: "Good Times" },
+  { image: "/gallery/gallery-5.webp", text: "Friends" },
+  { image: "/gallery/gallery-6.webp", text: "Events" },
+  { image: "/gallery/gallery-7.webp", text: "Brewing" },
+  { image: "/gallery/gallery-8.webp", text: "Community" },
+  { image: "/gallery/gallery-9.webp", text: "Cheers" },
+  { image: "/gallery/gallery-10.webp", text: "Taproom Vibes" },
+  { image: "/gallery/gallery-11.webp", text: "Food Trucks" },
+  { image: "/gallery/gallery-12.webp", text: "Beer Garden" },
+];
 
 export default function HomePage() {
   const featuredBeers = getFeaturedBeers();
@@ -156,8 +173,36 @@ export default function HomePage() {
       {/* Divider */}
       <div className="section-divider" />
 
+      {/* Photo Gallery Section */}
+      <section className="py-24 bg-warm-brown relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 mb-12">
+          <FadeIn className="text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-gold mb-4 decorative-line">
+              Life at Barley Naked
+            </h2>
+          </FadeIn>
+          <FadeIn delay={0.2} className="text-center">
+            <p className="text-cream/70 max-w-2xl mx-auto mt-8">
+              Take a peek inside our taproom. Good beer, great people, and unforgettable moments.
+            </p>
+          </FadeIn>
+        </div>
+        <div className="h-[500px] md:h-[600px]">
+          <CircularGallery
+            items={galleryItems}
+            bend={3}
+            borderRadius={0.05}
+            scrollSpeed={2}
+            scrollEase={0.03}
+          />
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="section-divider" />
+
       {/* Quick Info Section */}
-      <section className="py-24 px-4 bg-warm-brown relative">
+      <section className="py-24 px-4 bg-dark relative">
         <div className="max-w-6xl mx-auto">
           <FadeIn className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-heading text-gold decorative-line">
