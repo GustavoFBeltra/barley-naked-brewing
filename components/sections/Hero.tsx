@@ -30,7 +30,6 @@ export default function Hero() {
           poster="/barleynaked_logo.png"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
-          <source src="/hero-video.mov" type="video/quicktime" />
         </video>
         {/* Fallback background if video doesn't load */}
         <div className="absolute inset-0 bg-gradient-to-br from-warm-brown via-dark to-dark-brown" />
