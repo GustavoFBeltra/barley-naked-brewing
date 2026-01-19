@@ -21,18 +21,18 @@ export default function Hero() {
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background with Parallax */}
       <motion.div className="absolute inset-0 z-0" style={{ scale }}>
+        {/* Fallback background if video doesn't load */}
+        <div className="absolute inset-0 bg-gradient-to-br from-warm-brown via-dark to-dark-brown z-0" />
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover z-10"
           poster="/barleynaked_logo.png"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-        {/* Fallback background if video doesn't load */}
-        <div className="absolute inset-0 bg-gradient-to-br from-warm-brown via-dark to-dark-brown" />
       </motion.div>
 
       {/* Gradient Overlays */}
